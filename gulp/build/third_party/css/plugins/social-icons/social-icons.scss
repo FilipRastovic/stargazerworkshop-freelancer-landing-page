@@ -1,0 +1,197 @@
+/**
+ * ------------------------------------------------------------------------
+ * Font Awesome - Social Icons
+ * ------------------------------------------------------------------------
+ */
+
+.social-icons {
+    .fa {
+        font-size: 1.8em;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            color: rgba(255, 255, 255, 1.0);
+            -webkit-box-shadow: 1px 1px 3px #333;
+                    box-shadow: 1px 1px 3px #333;
+        }
+        &:active {
+            color: #fff;
+            -webkit-box-shadow: 1px 1px 3px #333;
+                    box-shadow: 1px 1px 3px #333;
+        }
+    }
+    .fa-adn {
+        background-color: #504e54;
+    }
+    .fa-apple {
+        background-color: #aeb5c5;
+    }
+    .fa-android {
+        background-color: #a5c63b;
+    }
+    .fa-bitbucket {
+        background-color: #003366;
+    }
+    .fa-bitbucket-square {
+        background-color: #003366;
+    }
+    .fa-bitcoin {
+        background-color: #f7931a;
+    }
+    .fa-btc {
+        background-color: #f7931a;
+    }
+    .fa-css3 {
+        background-color: #1572b7;
+    }
+    .fa-dribbble {
+        background-color: #f46899;
+    }
+    .fa-dropbox {
+        background-color: #0086be;
+    }
+    .fa-facebook {
+        background-color: #3c599f;
+    }
+    .fa-facebook-square {
+        background-color: #3c599f;
+    }
+    .fa-flickr {
+        background-color: #ff0084;
+    }
+    .fa-foursquare {
+        background-color: #0086be;
+    }
+    .fa-github {
+        background-color: #070709;
+    }
+    .fa-github-alt {
+        background-color: #070709;
+    }
+    .fa-github-square {
+        background-color: #070709;
+    }
+    .fa-google-plus {
+        background-color: #c52f30;
+    }
+    .fa-google-plus-square {
+        background-color: #c52f30;
+    }
+    .fa-html5 {
+        background-color: #e54d26;
+    }
+    .fa-instagram {
+        background-color: #a1755c;
+    }
+    .fa-linkedin {
+        background-color: #0085ae;
+    }
+    .fa-linkedin-square {
+        background-color: #0085ae;
+    }
+    .fa-linux {
+        background-color: #fbc002;
+        color: #333;
+    }
+    .fa-maxcdn {
+        background-color: #f6ae1c;
+    }
+    .fa-pagelines {
+        background-color: #241e20;
+        color: #3984ea;
+    }
+    .fa-pinterest {
+        background-color: #cc2127;
+    }
+    .fa-pinterest-square {
+        background-color: #cc2127;
+    }
+    .fa-renren {
+        background-color: #025dac;
+    }
+    .fa-skype {
+        background-color: #12b6f3;
+    }
+    .fa-stack-exchange {
+        background-color: #245590;
+    }
+    .fa-stack-overflow {
+        background-color: #ff7300;
+    }
+    .fa-trello {
+        background-color: #265a7f;
+    }
+    .fa-tumblr {
+        background-color: #314e6c;
+    }
+    .fa-tumblr-square {
+        background-color: #314e6c;
+    }
+    .fa-twitter {
+        background-color: #32ccfe;
+    }
+    .fa-twitter-square {
+        background-color: #32ccfe;
+    }
+    .fa-vimeo-square {
+        background-color: #229acc;
+    }
+    .fa-vk {
+        background-color: #375474;
+    }
+    .fa-weibo {
+        background-color: #c52f30;
+    }
+    .fa-windows {
+        background-color: #12b6f3;
+    }
+    .fa-xing {
+        background-color: #00555c;
+    }
+    .fa-xing-square {
+        background-color: #00555c;
+    }
+    .fa-youtube {
+        background-color: #c52f30;
+    }
+    .fa-youtube-play {
+        background-color: #c52f30;
+    }
+    .fa-youtube-square {
+        background-color: #c52f30;
+    }
+    &.icon-circle .fa {
+        border-radius: 50%;
+    }
+    &.icon-rounded .fa {
+        border-radius: 5px;
+    }
+    &.icon-flat .fa {
+        border-radius: 0;
+    }
+    &.icon-zoom .fa {
+        &:hover {
+            -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+        }
+        &:active {
+            -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+        }
+    }
+    &.icon-rotate .fa {
+        &:hover {
+            -webkit-transform: scale(1.1) rotate(360deg);
+                    transform: scale(1.1) rotate(360deg);
+        }
+        &:active {
+            -webkit-transform: scale(1.1) rotate(360deg);
+                    transform: scale(1.1) rotate(360deg);
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "sass" : {
+    "concat" : [
+      "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss",
+      "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
+      "node_modules/font-awesome/css/font-awesome.css",
+      "node_modules/magnific-popup/dist/magnific-popup.css",
+      "build/sass/_variables.scss",
+      "build/sass/abstracts/*.scss",
+      "build/sass/base/*.scss",
+      "build/sass/components/*.scss",
+      "build/sass/layout/*.scss",
+      "build/sass/pages/*.scss"
+    ]
+  },
+  "javascript" : {
+    "concat" : {
+      "vendor" : [
+       "node_modules/jquery/dist/jquery.js",
+        "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
+        "node_modules/jquery-validation/dist/jquery.validate.js",
+        "node_modules/jquery-validation/dist/additional-methods.js",
+        "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"
+      ],
+      "third_party": [
+        "build/third_party/js/**/*.js"
+      ],
+      "custom": [
+        "build/js/modules/**/*.js"
+      ]
+    },
+    "dependencies": [
+      ".resources/js/concat/vendor.js",
+      ".resources/js/concat/third_party.js",
+      ".resources/js/concat/custom.js"
+    ]
+  }
+}

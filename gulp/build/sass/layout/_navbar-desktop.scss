@@ -1,0 +1,53 @@
+.navbar-desktop {
+    .navbar-brand {
+        padding-top: 20px;
+    }
+    .navbar-brand-text {
+         font-size: $brand-size-md;
+    } 
+ }
+ 
+ .navbar-link {
+     color: white;
+     display: inline-block;
+     margin-top: 30px;
+     border: 2px solid transparent;
+     padding: 6px 13px;
+ }
+ 
+ .navbar-link:hover {
+     color: $yellow-color;
+     text-decoration: none;
+     
+ }
+ 
+ .contact {
+     border: 1px solid $highlight-color;
+     border-radius: 4px;
+ }
+ 
+ .navbar {
+     margin-bottom: 0px;
+     border-radius: 0px;
+     border: none;
+     .navbar-brand {
+         @media (min-width: 769px) {
+             padding-left: 50px;
+         }
+     }
+ }
+ 
+ .navbar-right {
+     padding-right: 60px;
+     padding-top: 25px;
+     a {
+         color: white !important;
+         font-weight: 700;
+         font-size: 14px;
+         text-transform: uppercase;
+     }
+ 
+     a:hover {
+         color: $highlight-color !important;
+     }//a
+ }

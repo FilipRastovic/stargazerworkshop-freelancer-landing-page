@@ -1,0 +1,232 @@
+.hero {
+    background: $blue-color;
+    padding-top: 2rem;
+    padding-bottom: 9.5rem;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 1400px) {
+        padding-top: 5rem;//a
+
+        form {
+            margin-top: 4rem;
+        }
+    }
+
+    &--background::after {
+        content: "";
+        background: url(../img/mobile-hero-background.png);
+        opacity: 0.07;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background-size: cover;
+        z-index: -2;
+    
+        @media (min-width: 768px) {
+            content: "";
+            background: url(../img/background-curve.png);
+            opacity: 0.07;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background-size: contain;
+            z-index: -2;
+        }
+    }
+
+    img {
+        border-radius: 550px;
+        border: 3px solid white;
+    }
+}
+
+/* Copy section */
+.copy {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background: $copy-background;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, $copy-background, white);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, $copy-background, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    z-index: 1;
+
+    img {
+        @media (min-width: 1000px) {
+            top: -100px;
+            position: relative;
+        }
+    }
+}
+
+.copy::after {
+    content: "";
+    background: url(../img/copy-background.png);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -2;
+
+    @media (min-width: 768px) {
+        background: url(../img/background-curve.png);
+        background-size: contain;
+        opacity: 0.05;
+    }
+}
+
+.transform-image {
+    img {
+        @media (min-width: 400px) {
+            width: 250px;
+        }
+    }
+}/* Copy section ends */
+
+.tech {
+    background: #76c6ff;
+    padding-bottom: 4rem;
+    .padded-bot {
+        padding-bottom: 4rem;
+    }
+
+}
+
+/* Portfolio section */
+.portfolio {
+    padding-bottom: 60px;
+    background: #F3F3F3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F3F3F3, #FFF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F3F3F3, #FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    z-index: 1;
+
+    .portfolio-wrapper {
+        img {
+            margin-top: 77px;
+            @media (min-width: 768px) {
+                padding-bottom: 100px;
+            }
+        }
+    }
+
+    .btn {
+        background: #F4E04D;
+        margin-top: 60px !important;
+    }
+    
+    .testimonials-title {
+        margin-top: 220px;
+    }
+
+    h3 { 
+        font-weight: 700 !important;
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+
+    p {
+        font-size: 17px !important;
+        line-height: 26px !important;
+        font-weight: 400 !important;
+        text-align: left;
+
+        @include respond(phone) {
+            text-align: center;
+        }
+    }
+
+    img {
+        transition: .4s;
+    }
+
+    img:hover {
+        box-shadow: $material-shadow-1;
+    }
+}
+
+.portfolio::after {
+    content: "";
+    background: url(../img/copy-background.png);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -2;
+
+    @media (min-width: 768px) {
+        background: url(../img/background-curve.png);
+        background-size: contain;
+        opacity: 0.05;
+    }
+}
+
+/* Blue Ad Heading & CTA Section */
+.ad {
+    text-align: center;
+    background: $blue-color;
+    padding-top: 45px;
+    padding-bottom: 80px;
+    
+    h2 {
+        margin-bottom: 38px;
+    }
+
+    p {
+        text-align: center;
+        margin: 0 19px 10px;
+        @media (min-width: 768px) {
+            margin: 30px 100px;
+        }
+    }
+}
+
+/* Brand logos section */
+.brands {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    img {
+        padding-top: 70px;
+        @media (min-width: 768px) {
+            padding-top: 8px;
+            height: 37px;
+            padding-right: 60px;
+            margin-top: 50px;
+        }
+
+        @media (min-width:1468px) {
+            padding-top: 20px;
+            height: 57px;
+            padding-right: 60px;
+            margin-top: 50px;
+        }
+    }
+}
+
+.hero-separator {
+    @media (min-width: 1000px) {
+        padding-top: 210px;
+    }
+}
+
+.tooltip-inner {
+    background-color: #dadada;
+    color: #383838;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #dadada;
+}

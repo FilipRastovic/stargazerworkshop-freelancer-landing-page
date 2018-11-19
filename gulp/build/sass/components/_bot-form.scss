@@ -1,0 +1,112 @@
+.bot-form {
+    .form-button {
+        border-radius: 50px !important;
+        margin-bottom: 16px !important;
+    }
+
+    padding-bottom: 60px;
+    background: #F3F3F3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F3F3F3, #FFF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F3F3F3, #FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    z-index: 1;
+    color: #333 !important;
+
+    @media (min-width: 768px) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 100px;
+
+
+        p {
+            font-size: 23px !important;
+            font-weight: 400 !important;
+            text-align: center !important;
+        }
+        
+    }
+
+    h3 {
+        text-align: left;
+        color: inherit !important;
+    }
+    p {
+        text-align: left;
+        color: inherit !important;
+    }
+
+    input,
+    select,
+    textarea {
+        border: none;
+        margin-bottom: 15px;
+
+    }
+    input::placeholder {
+        color: rgb(175, 175, 175) !important;
+    }
+
+    form {
+        border-radius: 9px;
+        @media (min-width: 768px) {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            border-radius: 0px;
+        }
+        background: #EBEBEB;
+        padding: 10px 30px 50px;
+        
+
+        input,
+        select,
+        button {
+            border-radius: 50px;
+        }
+
+        textarea {
+            border-radius: 20px;
+        }
+
+        button {
+            border-radius: 50px !important;
+        }
+    }
+
+    h2.bot-form-title {
+        padding-top: 0px !important;
+        font-size: 30px !important;
+        padding-bottom: 20px;
+    }
+}
+
+
+.bot-form::after {
+    content: "";
+    background: url(../img/copy-background.png);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -2;
+
+    @media (min-width: 768px) {
+        background: url(../img/background-curve.png);
+        background-size: contain;
+        opacity: 0.05;
+    }
+
+    @media (min-width:768px) {
+        .mb-60 {
+            padding-bottom: 30px !important;
+        }
+    }
+}
+
+.mb-30 {
+    padding-bottom: 30px;
+}

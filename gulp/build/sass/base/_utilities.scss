@@ -1,0 +1,60 @@
+.u-padding-bottom-huge {
+    padding-bottom: 60px;
+
+    @include respond(phone) {
+        padding-bottom: 40px;
+    }
+}
+
+.u-margin-top-60 {
+    margin-top: 60px
+}
+
+.u-margin-top-120 {
+    margin-top: 120px !important;
+}
+
+.white {
+    color: white !important;
+}
+
+.mb-60 {
+    margin-bottom: 60px !important;
+}
+
+.highlight-line {
+    height: 10px;
+    background-color: $hr-color;
+}
+
+.highlight {
+    color: $highlight-color;
+}
+
+.pull-right {
+    text-align: right !important;
+
+    &--fix {
+        right: -100px;
+    }
+}
+
+.u-padding-top-huge {
+    padding-top: 100px !important;
+}
+
+.u-padding-top-40 {
+    padding-top: 4rem;
+}
+
+.u-bold {
+    font-weight: 700;
+}
+
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+.u-highlight-y {
+    color: $yellow-color !important;
+}

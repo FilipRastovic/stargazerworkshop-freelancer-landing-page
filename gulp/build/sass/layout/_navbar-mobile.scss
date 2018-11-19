@@ -1,0 +1,92 @@
+.navbar-section {
+    background: $navbar-color;
+    height: 95px;
+    span {
+        display: block;
+    }
+
+    .container-fluid {
+        padding-left: 10px;
+    }   
+}
+
+.navbar-brand {
+    padding: 10px 0px;
+}
+
+.navbar-brand-text {
+    font-size: $brand-size;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+.navbar-brand-quote {
+    font-size: $brand-quote;
+    font-style: italic;
+    padding-top: 7px;
+}
+
+.fa-bars {
+    color: white;
+    font-size: 30px;
+    padding-top: 34px;
+    padding-right: 18px;
+}
+
+.overlay {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $blue-color;
+    z-index: 99999; 
+  }
+  
+  .overlay nav {
+    text-align: center;
+    position: relative;
+    top: 10vh;
+    height: 100%;
+    font-size: 2em;
+    background-color: none; 
+  }
+  
+  .overlay ul {
+    list-style: none;
+    margin: 0 auto;
+  }
+  
+  .overlay ul li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white; 
+  }
+  
+  .overlay-close {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    height: auto;
+    right: 10px;
+    top: 10px; 
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .overlay-data {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  
+  .overlay-open {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; 
+  }

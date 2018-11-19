@@ -1,0 +1,235 @@
+.venn {
+    padding-top: 50px;
+
+    @media (max-width: 500px) {
+        padding-top: 164px;
+    }
+
+    @media (max-width: 1000px) {
+        padding-top: 14px;
+    }
+
+$breakpoints: (
+  sm: 400px,  // small
+  md: 550px,  // middle
+  lg: 700px   // large
+);
+
+@mixin breakpoint($bp, $rule: min-width) {
+  @media screen and (#{$rule}: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+$venn-diagram-container-height: 100vw;
+$venn-diagram-container-width: 100%;
+$venn-diagram-container-min-width: 297px;
+$venn-diagram-container-min-height: 297px;
+$venn-diagram-container-max-width: 600px;
+$venn-diagram-container-max-height: 600px;
+$circle-diameter: 60%;
+$circle-diameter-min: ($venn-diagram-container-min-width * .6);
+$circle-diameter-max: ($venn-diagram-container-max-width * .6);
+$circle-center-offset: (($circle-diameter / 2) * -1);
+$subcircle-diameter: round($circle-diameter / 4);
+$subcircle-diameter-min: ($circle-diameter-min * .3);
+$subcircle-diameter-max: ($circle-diameter-max * .3);
+$subsubcircle-diameter: round($subcircle-diameter / 4);
+$subsubcircle-diameter-min: ($subcircle-diameter-min * .3);
+$subsubcircle-diameter-max: ($subcircle-diameter-max * .3);
+$label-offset-x: round($circle-diameter / 5);
+$label-offset-y: round($circle-diameter / 2.75);
+$font-size-calculation: 1.25;
+$title-font-size-xs: 15px;
+$title-font-size-sm: ($title-font-size-xs * $font-size-calculation);
+$title-font-size-md: ($title-font-size-sm * $font-size-calculation);
+$title-font-size-lg: ($title-font-size-md * $font-size-calculation);
+$subtitle-font-size-xs: round($title-font-size-xs / ($font-size-calculation * 1.6));
+$subtitle-font-size-sm: ($subtitle-font-size-xs * $font-size-calculation);
+$subtitle-font-size-md: ($subtitle-font-size-sm * $font-size-calculation);
+$subtitle-font-size-lg: ($subtitle-font-size-md * $font-size-calculation);
+$color-1: rgb(255,79,76);
+$color-2: adjust-hue($color-1, -80%);
+$color-3: adjust-hue($color-2, -80%);
+$color-alpha: 0.75;
+$color-alpha-hover: 0.95;
+$first-circle-color: rgba($color-1, $color-alpha);
+$first-circle-color-hover: rgba($color-1, $color-alpha-hover);
+$second-circle-color: rgba($color-2, $color-alpha);
+$second-circle-color-hover: rgba($color-2, $color-alpha-hover);
+$third-circle-color: rgba($color-3, $color-alpha);
+$third-circle-color-hover: rgba($color-3, $color-alpha-hover);
+
+.venn-diagram-container {
+  width: $venn-diagram-container-width;
+  height: $venn-diagram-container-height;
+  min-width: $venn-diagram-container-min-width;
+  min-height: $venn-diagram-container-min-height;
+  max-width: $venn-diagram-container-max-width;
+  max-height: $venn-diagram-container-max-height;
+  position: relative;
+  color: rgba(255,255,255,0.75);  
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  * {
+    transition: 0.5s all ease-in-out;
+    fill: rgba(255,255,255,0.75);
+  }
+  > [class*="circle"]:nth-child(1) { background: $first-circle-color; &:hover {background: $first-circle-color-hover;}}
+  > [class*="circle"]:nth-child(2) { background: $second-circle-color; &:hover {background: $second-circle-color-hover;}}
+  > [class*="circle"]:nth-child(3) { background: $third-circle-color; &:hover {background: $third-circle-color-hover;}}
+}
+
+[class*="circle-"] {
+  height: $circle-diameter;
+  width: $circle-diameter;
+  min-height: $circle-diameter-min;
+  min-width: $circle-diameter-min;
+  max-height: $circle-diameter-max;
+  max-width: $circle-diameter-max;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  &:hover ~ [class*="circle-"] {
+    opacity: 0.95;
+    &[class*="subcircle-"] {
+      opacity: 1;
+    }
+  }
+  label {
+    position: absolute;
+    display: block;
+    text-align: center;      
+    width: round($circle-diameter * .6);
+  }
+}
+
+[class*="subcircle"] {  
+  width: $subcircle-diameter;
+  height: $subcircle-diameter;
+  min-width: $subcircle-diameter-min;
+  min-height: $subcircle-diameter-min;
+  max-width: $subcircle-diameter-max;
+  max-height: $subcircle-diameter-max;
+  z-index: 3;
+  > label {
+    position: relative;
+    width: 100%;
+  }
+  &[class*="top"] > label { top: auto;}
+  &[class*="right"] > label { right: auto;}
+  &[class*="bottom"] > label { bottom: auto;}
+  &[class*="left"] > label { left: auto;}
+  &[class*="top"] {
+    top: round($subcircle-diameter * 1.5);
+  }
+}
+
+[class*="subsubcircle"] {
+  width: $subsubcircle-diameter;
+  height: $subsubcircle-diameter;
+  min-width: $subsubcircle-diameter-min;
+  min-height: $subsubcircle-diameter-min;
+  max-width: $subsubcircle-diameter-max;
+  max-height: $subsubcircle-diameter-max;
+  z-index: 4;
+}
+
+.title {
+  display: block;
+  font-size: $title-font-size-xs;
+  @include breakpoint(sm) { font-size: $title-font-size-sm; }
+  @include breakpoint(md) { font-size: $title-font-size-md; }
+}
+
+.subtitle {
+  font-size: $subtitle-font-size-xs;
+  @include breakpoint(sm) { font-size: $subtitle-font-size-sm; }
+  @include breakpoint(md) { font-size: $subtitle-font-size-md; }
+}
+
+[class*="top"] {
+  top: 0;
+  > label {
+    top: $label-offset-y;
+    @include breakpoint(sm) { top: ($label-offset-y + 1); }
+    @include breakpoint(md) { top: ($label-offset-y + 2); }
+    @include breakpoint(lg) { top: ($label-offset-y + 3); }
+  }
+}
+
+[class*="left"] {
+  left: 0;
+  > label {
+    left: $label-offset-x;
+  }
+}
+
+[class*="right"] {
+  right: 0;
+  > label {
+    right: $label-offset-x;
+  }
+}
+
+[class*="bottom"] {
+  bottom: 0;
+  > label {
+    bottom: $label-offset-y;
+    @include breakpoint(sm) { bottom: ($label-offset-y + 1); }
+    @include breakpoint(md) { bottom: ($label-offset-y + 2); }
+    @include breakpoint(lg) { bottom: ($label-offset-y + 3); }
+  }
+}
+
+[class*="center-left"] {
+  top: 53%;
+  @include breakpoint(sm) { top: 52%; }
+  left: 30%;
+  margin-top: -($subcircle-diameter-min / 2);
+}
+
+[class*="center-right"] {
+  top: 53%;
+  @include breakpoint(sm) { top: 52%; }
+  right: 30%;
+  margin-top: -($subcircle-diameter-min / 2);
+}
+
+[class*="center-x"] {
+  left: 50%;
+  margin-left: $circle-center-offset;
+  &[class*="subcircle"] {
+    margin-left: ($circle-center-offset / 4);
+    > label {
+      top: auto;
+      left: auto;
+      margin-left: 0;
+    }
+  }
+  > label {
+    left: 50%;
+    margin-left: ($circle-center-offset / 1.65);
+  }
+}
+
+[class*="center-x-y"] {
+  top: 50%;
+  left: 50%;
+  &[class*="subsubcircle"] {
+    margin-top: -($subsubcircle-diameter * 1.75);
+    margin-left: -($subsubcircle-diameter / 2);  
+    > label {
+      top: auto;
+      left: auto;
+      margin-left: 0;
+    }
+  }
+}
+
+.hidden-xs {
+  display: none;
+  @include breakpoint(sm) { display: inline; }
+}//a
+}
